@@ -4,21 +4,16 @@ import SearchBar from './SearchBar';
 import List from './List';
 import gambarRegistered from '../../images/registered.png';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {fetchUsers} from '../../actions';
+
+
 
 class Registered extends React.Component{
 
-    state={items:[
-        {
-            "id":"1",
-            "license":"Loading...",
-            "name":"Loading..."
-        }
-    ],isLoaded:false};
-
     componentDidMount(){
         axios.get('http://localhost:5000/contoh').then((response) => {
-            this.setState({items:response.data})
-//            console.log(this.state.items);
+            this.props.fetchUsers(response.data);
         })
     }
 
@@ -26,7 +21,7 @@ class Registered extends React.Component{
         axios.get('http://localhost:5000/contoh', {
             params: {query: term}
         }).then((response)=>{
-            this.setState({items:response.data})
+            this.props.fetchUsers(response.data);
         })
     }
 
@@ -58,7 +53,7 @@ class Registered extends React.Component{
                         </Link>
                     </div>
                     <div className="nine wide column">
-                        <List data={this.state.items}/>
+                        <List data={this.props.users}/>
                     </div>
                     </div>
             </div>
@@ -66,4 +61,10 @@ class Registered extends React.Component{
     }
 }
 
-export default Registered
+const mapStateToProps = (state) => {
+    return state;
+}
+
+export default connect(mapStateToProps, {
+    fetchUsers:fetchUsers
+})(Registered)

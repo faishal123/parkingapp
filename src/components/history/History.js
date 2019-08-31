@@ -3,27 +3,22 @@ import axios from 'axios';
 import ListHistory from './ListHistory';
 import SearchBarHistory from './SearchBarHistory';
 import gambarHistory from '../../images/history.png';
+import {connect} from 'react-redux';
+import {fetchHistory} from '../../actions';
 
 class History extends React.Component{
 
-    state={
-        data:[]
-    };
-
     onFormSubmit = (term) => {
-        console.log(term)
         axios.get('http://localhost:5000/history',{
             params: {query: term}
         }).then((response)=>{
-            console.log(response);
-            this.setState({data:response.data})
+            this.props.fetchHistory(response.data);
         })
     }
 
     componentDidMount(){
         axios.get('http://localhost:5000/history').then((response) => {
-            this.setState({data:response.data})
-//            console.log(this.state.data);
+            this.props.fetchHistory(response.data);
         })
     }
 
@@ -39,7 +34,7 @@ class History extends React.Component{
                         <SearchBarHistory onSubmit={this.onFormSubmit} />
                     </div>
                     <div className="nine wide column">
-                        <ListHistory items={this.state.data}/>
+                        <ListHistory items={this.props.history}/>
                     </div>
                 </div>
             </div>
@@ -47,4 +42,10 @@ class History extends React.Component{
     }
 }
 
-export default History;
+const mapStateToProps = (state) => {
+    return state;
+}
+
+export default connect(mapStateToProps, {
+    fetchHistory:fetchHistory
+})(History);

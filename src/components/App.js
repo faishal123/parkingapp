@@ -3,9 +3,9 @@ import Homepage from './homepage/Homepage';
 import Nav from './Nav';
 import Registered from './registered/Registered';
 import History from './history/History';
-import Insert from './Insert';
-import Delete from './Delete'
-import Profile from './Profile'
+import Insert from './InsertWithRedux';
+import Delete from './DeleteWithRedux';
+import Profile from './Profile';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class App extends React.Component{
@@ -13,7 +13,7 @@ class App extends React.Component{
         return(
             <Router>
                 <Switch>
-                    <div className="ui container fluid" style={{background:'#f3f9ff'}}>
+                    <React.Fragment>
                         <Route path="/insert" component={Insert}/>
                         <Route path="/delete" component={Delete}/>
                         <Nav />
@@ -21,7 +21,7 @@ class App extends React.Component{
                         <Route path="/history" component={History}/>
                         <Route path="/registered" component={Registered}/>
                         <Route path="/profile/:id" component={Profile}/>
-                    </div>
+                    </React.Fragment>
                 </Switch>
             </Router>
         );

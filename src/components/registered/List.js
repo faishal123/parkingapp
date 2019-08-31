@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const List = (props) => {
-//    console.log(props.data);
     if(props.data.length>0){
         return(
             <div className="ui raised very padded container segment" style={{backgroundColor:'white', paddingTop:'30px', paddingBottom:'30px', paddingLeft:'50px', paddingRight:'50px', borderRadius:'7%', color:'#7a7a7a', marginBottom:'50px'}}>
@@ -16,9 +15,9 @@ const List = (props) => {
                         </div>
                     </div>
                     {props.data.map(item => (
-                    <div className="item">
+                    <div className="item" key={item.id}>
                         <div className="middle aligned right floated content">
-                            <Link to={`/profile/${item.id}`}><i class="chevron right icon"></i></Link>
+                            <Link to={`/profile/${item.id}`}><i className="chevron right icon"></i></Link>
                         </div>
                         <div className="middle aligned right floated content">
                             {item.license}

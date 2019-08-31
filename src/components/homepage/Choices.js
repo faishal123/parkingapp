@@ -19,7 +19,7 @@ const Choices = (props) => {
                         <Link to="/registered">
                             <button className="fluid ui inverted blue button">
                                 Registered Vehicle
-                                <i class="chevron right icon"></i>
+                                <i className="chevron right icon"></i>
                             </button>
                         </Link>
                     </div>
@@ -40,7 +40,7 @@ const Choices = (props) => {
                         <Link to="/history">
                             <button className="fluid ui inverted blue button">
                                 History
-                                <i class="chevron right icon"></i>
+                                <i className="chevron right icon"></i>
                             </button>
                         </Link>
                     </div>

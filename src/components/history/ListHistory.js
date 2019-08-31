@@ -1,7 +1,7 @@
 import React from 'react';
 
 function showAction(item){
-    if(item=='MASUK'){
+    if(item==='MASUK'){
         return <div className="ui green basic label">
             Masuk
         </div>
@@ -18,7 +18,7 @@ const ListHistory = (props) => {
         <div className="ui raised very padded container segment" style={{backgroundColor:'white', paddingTop:'30px', paddingBottom:'30px', paddingLeft:'50px', paddingRight:'50px', color:'#7a7a7a', marginBottom:'50px'}}>
             <div className="ui middle aligned divided very relaxed list">
                 {props.items.map(item=>(
-                    <div className="item">
+                    <div className="item" key={item[0]}>
                         <div className='right floated content'>
                             {showAction(item[2])}
                         </div>

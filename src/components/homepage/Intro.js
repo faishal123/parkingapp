@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Intro = (props) => {
-    console.log(props.tulisan);
         return(
                 <div className="ui container" style={{color:'#7a7a7a', paddingLeft:'75px', paddingRight:'75px'}}> 
                     <h1 style={{fontSize:'3em'}}>{props.tulisan.judul}</h1>
