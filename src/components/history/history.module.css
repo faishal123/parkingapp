@@ -1,0 +1,56 @@
+.historyContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.historyLayout {
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  max-width: 1000px;
+}
+
+.historyLayout > div {
+  flex-grow: 1 !important;
+}
+
+.historyLayout > :first-child {
+  max-width: 400px;
+  flex-basis: 50%;
+}
+
+.historyLayout > :nth-child(2) {
+  max-width: 600px !important;
+  flex-basis: 50%;
+}
+
+.listHistoryContainer {
+  background-color: white;
+  padding: 30px 50px;
+  color: #7a7a7a;
+  margin-bottom: 50px;
+  margin-top: 0;
+  max-height: calc(80vh - 70px);
+  overflow: auto;
+}
+
+.searchInput {
+  box-shadow: 0px 0px 2px grey !important;
+}
+
+@media (max-width: 900px) {
+  .historyLayout {
+    display: unset;
+    max-width: 600px;
+  }
+
+  .historyLayout > :first-child {
+    max-width: 600px;
+  }
+
+  .listHistoryContainer {
+    max-height: calc(80vh - 200px);
+  }
+}
