@@ -1,0 +1,15 @@
+.deleteFormContainer {
+  max-height: calc(80vh - 70px);
+  max-width: 600px;
+}
+
+.deletePageContainer {
+  background: #f3f9ff;
+  height: 100%;
+  min-height: 100vh;
+  display: flex !important;
+  justify-content: center;
+  align-content: top;
+  align-items: top;
+  padding-top: 50px;
+}

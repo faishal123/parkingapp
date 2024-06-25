@@ -1,0 +1,12 @@
+.background {
+  background-color: #f3f9ff;
+  height: 100vh;
+  padding: 10%;
+}
+
+@media (max-width: 700px) {
+  .background {
+    height: 100%;
+    min-height: 100vh;
+  }
+}

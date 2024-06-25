@@ -1,0 +1,41 @@
+.homepageContainer {
+  background: #f3f9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  height: 100%;
+}
+
+.homepageContainer > :first-child {
+  max-width: 500px;
+  width: 50%;
+}
+
+.homepageContainer > :nth-child(2) {
+  max-width: 300px;
+  width: 50%;
+}
+
+.introTextContainer {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+@media (max-width: 700px) {
+  .homepageContainer {
+    flex-direction: column;
+  }
+
+  .homepageContainer > :first-child {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .homepageContainer > :nth-child(2) {
+    max-width: 400px;
+    width: 100%;
+  }
+}

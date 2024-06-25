@@ -1,0 +1,44 @@
+.width100percent {
+  width: 100%;
+}
+
+.color-grey {
+  color: #7a7a7a !important;
+}
+
+.textAlignJustify {
+  text-align: justify !important;
+}
+
+.fontSize-h1 {
+  font-size: 3rem !important;
+}
+
+.ui.card {
+  width: 100%;
+}
+
+* {
+  font-size: 16px;
+}
+
+.header {
+  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header > h1 {
+  font-size: 2.5rem;
+  margin: unset;
+  min-height: unset;
+}
+
+.header > img {
+  max-width: 40px;
+}
+
+.button {
+  margin: 0 !important;
+}
